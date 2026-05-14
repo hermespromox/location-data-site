@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location Data Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;--text:#171717;--muted:#4d4d4d;--line:rgba(0,0,0,.08);
+      --blue:#0a72ef;--pink:#de1d8d;--red:#ff5b4f;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+    .logo{font-weight:600;letter-spacing:-.6px}
+    .pill{font-size:12px;padding:4px 10px;border-radius:9999px;background:#ebf5ff;color:#0068d6}
+    .hero{padding:72px 0 40px}
+    h1{font-size:56px;line-height:1.04;letter-spacing:-2.6px;margin:0 0 16px}
+    .sub{font-size:20px;line-height:1.7;color:var(--muted);max-width:760px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:34px 0 16px}
+    .card{padding:20px;border-radius:10px;box-shadow:0 0 0 1px var(--line),rgba(0,0,0,.04) 0 2px 2px,#fafafa 0 0 0 1px}
+    .card h3{margin:0 0 8px;font-size:24px;letter-spacing:-.9px}
+    .card p{margin:0;color:var(--muted);line-height:1.6}
+    .kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:20px 0 52px}
+    .metric{padding:22px;border-radius:10px;box-shadow:0 0 0 1px var(--line),rgba(0,0,0,.04) 0 2px 2px}
+    .metric .n{font-size:42px;line-height:1.05;letter-spacing:-1.6px;font-weight:600}
+    .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:10px 0 70px}
+    .step{padding:18px;border-radius:10px;box-shadow:0 0 0 1px var(--line)}
+    .tag{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase}
+    .blue{color:var(--blue)} .pink{color:var(--pink)} .red{color:var(--red)}
+    footer{padding:20px 0 40px;color:#666;border-top:1px solid #ebebeb}
+    @media (max-width:900px){.grid,.kpi,.flow{grid-template-columns:1fr}h1{font-size:40px;letter-spacing:-1.8px}.hero{padding-top:40px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">Location Data Hub</div>
+      <div class="pill">Live geospatial insights</div>
+    </nav>
+
+    <section class="hero">
+      <h1>Location intelligence for real-world decisions.</h1>
+      <p class="sub">A simple website showcasing how location data helps with logistics, city planning, retail site selection, and mobility analysis. Clean Vercel-inspired design, fast static delivery.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card"><h3>Coverage</h3><p>Global point datasets, boundaries, and routing layers from open geographic sources.</p></article>
+      <article class="card"><h3>Speed</h3><p>Pre-indexed tiles and lightweight APIs for quick map rendering and low-latency lookups.</p></article>
+      <article class="card"><h3>Trust</h3><p>Versioned pipelines and validation checks to keep coordinates accurate and auditable.</p></article>
+    </section>
+
+    <section class="kpi">
+      <div class="metric"><div class="n">2.4B</div><p>location points processed per month</p></div>
+      <div class="metric"><div class="n">98.7%</div><p>geocode confidence score</p></div>
+      <div class="metric"><div class="n">120ms</div><p>median lookup latency</p></div>
+    </section>
+
+    <section class="flow">
+      <div class="step"><div class="tag blue">Develop</div><h4>Ingest and normalize</h4><p>Collect GPS and address data, clean duplicates, standardize schemas.</p></div>
+      <div class="step"><div class="tag pink">Preview</div><h4>Visualize and validate</h4><p>Render map layers, run QA checks, compare with known reference regions.</p></div>
+      <div class="step"><div class="tag red">Ship</div><h4>Serve to apps</h4><p>Publish static artifacts and APIs for dashboards, mobile apps, and reports.</p></div>
+    </section>
+
+    <footer>Built for GitHub and Vercel deployment with static HTML and CSS</footer>
+  </div>
+</body>
+</html>
