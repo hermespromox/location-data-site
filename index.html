@@ -3,22 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MonFlux — Location Intelligence Platform</title>
-  <meta name="description" content="MonFlux helps teams make high-stakes decisions with trusted location data, geospatial analytics, and real-time operational intelligence." />
+  <title>MonFlux | Enterprise Location Intelligence Platform</title>
+  <meta name="description" content="MonFlux is an enterprise location intelligence platform for logistics, retail, and urban operations. Trusted geospatial data, quality validation, and low-latency APIs." />
+  <meta name="keywords" content="location intelligence, geospatial analytics, GIS platform, geocoding, route optimization, spatial data, enterprise mapping" />
+  <meta name="author" content="MonFlux" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://location-data-site.vercel.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MonFlux" />
+  <meta property="og:title" content="MonFlux | Enterprise Location Intelligence Platform" />
+  <meta property="og:description" content="Trusted location data pipelines and APIs for operational, strategic, and customer-facing decisions." />
+  <meta property="og:url" content="https://location-data-site.vercel.app/" />
+  <meta property="og:image" content="https://location-data-site.vercel.app/og-image.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MonFlux | Enterprise Location Intelligence Platform" />
+  <meta name="twitter:description" content="Trusted location data pipelines and APIs for operational, strategic, and customer-facing decisions." />
+  <meta name="twitter:image" content="https://location-data-site.vercel.app/og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MonFlux",
+    "url": "https://location-data-site.vercel.app/",
+    "logo": "https://location-data-site.vercel.app/assets/monflux-logo.svg",
+    "description": "Enterprise location intelligence platform for trusted geospatial decision-making.",
+    "sameAs": [
+      "https://github.com/hermespromox/location-data-site"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MonFlux",
+    "url": "https://location-data-site.vercel.app/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://location-data-site.vercel.app/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
   <style>
     :root {
       --background:#FFFDFB; --surface:#FFFBF5; --elevated:#FEF7ED;
       --text:#521000; --text-strong:#140400; --border:#EBD5C1;
-      --accent:#FF4801; --accent-hover:#FF7038;
-      --ok:#19E306; --muted:#7a3a1b;
-      --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
-      --space-5:20px; --space-6:24px; --space-8:32px; --space-10:40px;
+      --accent:#FF4801; --accent-hover:#FF7038; --ok:#19E306; --muted:#7a3a1b;
+      --space-2:8px; --space-3:12px; --space-4:16px; --space-6:24px; --space-8:32px; --space-10:40px;
       --radius-pill:9999px; --radius-card:12px;
       --shadow:0 1px 2px rgba(82,16,0,.08),0 10px 28px rgba(82,16,0,.08);
       --shadow-hover:0 4px 10px rgba(82,16,0,.12),0 16px 34px rgba(82,16,0,.14);
       --ring:0 0 0 3px rgba(255,72,1,.24);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{margin:0;background:var(--background);color:var(--text);font-family:Inter,Segoe UI,Avenir Next,system-ui,sans-serif;line-height:1.55}
     .wrap{max-width:1160px;margin:0 auto;padding:var(--space-6)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:10px 0}
@@ -54,24 +100,30 @@
     .k{font-size:12px;text-transform:uppercase;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700}
     .k.dev{color:#0A95FF}.k.preview{color:#EE0DDB}.k.ship{color:var(--accent)}
 
+    .logos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+    .logo-cell{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;font-weight:700;color:#8c4a26}
+
+    .faq details{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+    .faq summary{cursor:pointer;font-weight:600;color:var(--text-strong)}
+
     .cta{margin-top:44px;background:linear-gradient(135deg,#fff3e6,#ffe7d7);border:1px solid #efc4a7;border-radius:16px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
     .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:9999px;padding:6px 10px;font-size:12px;font-weight:600;color:var(--muted)}
     .dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
 
     footer{margin-top:40px;padding:20px 0;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
-
-    @media (max-width:960px){.hero{grid-template-columns:1fr}.grid3,.pipeline{grid-template-columns:1fr}.nav-links{display:none}}
+    @media (max-width:960px){.hero{grid-template-columns:1fr}.grid3,.pipeline,.logos{grid-template-columns:1fr}.nav-links{display:none}}
     @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <img src="assets/monflux-logo.svg" alt="MonFlux logo" />
       <div class="nav-links">
         <a href="#platform">Platform</a>
         <a href="#workflow">Workflow</a>
-        <a href="#security">Security</a>
+        <a href="#customers">Customers</a>
+        <a href="#faq">FAQ</a>
       </div>
       <button class="btn">Book Demo</button>
     </nav>
@@ -85,15 +137,11 @@
           <button class="btn">View Architecture</button>
         </div>
         <div class="trust">
-          <span>ISO-ready data workflows</span>
-          <span>•</span>
-          <span>99.95% platform uptime SLA</span>
-          <span>•</span>
-          <span>Audit trails by default</span>
+          <span>ISO-ready data workflows</span><span>•</span><span>99.95% platform uptime SLA</span><span>•</span><span>Audit trails by default</span>
         </div>
       </div>
-      <aside class="panel" aria-label="live metrics panel">
-        <div class="badge"><span class="dot"></span> Live platform status: Healthy</div>
+      <aside class="panel" aria-label="Live metrics panel">
+        <div class="badge"><span class="dot"></span>Live platform status: Healthy</div>
         <div class="score">
           <div class="mini"><div class="num">2.4B</div><div>points processed/month</div></div>
           <div class="mini"><div class="num">98.7%</div><div>geocode confidence</div></div>
@@ -122,7 +170,35 @@
       </div>
     </section>
 
-    <section id="security" class="cta">
+    <section id="customers" class="section">
+      <h2 class="title">Trusted by operations, strategy, and product teams.</h2>
+      <p class="subtitle">Representative teams using MonFlux workflows in production environments.</p>
+      <div class="logos">
+        <div class="logo-cell">NOVA TRANSIT</div>
+        <div class="logo-cell">TERRACORE</div>
+        <div class="logo-cell">URBANRIDGE</div>
+        <div class="logo-cell">PATHGRID</div>
+        <div class="logo-cell">AEROLANE</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title">What teams say</h2>
+      <div class="grid3">
+        <article class="card"><h3>“Deployment in days”</h3><p>“We replaced fragmented GIS scripts with a governed pipeline in under two weeks.” — VP Data, NOVA TRANSIT</p></article>
+        <article class="card"><h3>“Fewer map incidents”</h3><p>“Quality gates caught boundary issues before release and cut incident volume significantly.” — Head of Platform, TERRACORE</p></article>
+        <article class="card"><h3>“Faster planning cycles”</h3><p>“Our network planning team can run scenarios in hours rather than days.” — Director Operations, URBANRIDGE</p></article>
+      </div>
+    </section>
+
+    <section id="faq" class="section faq">
+      <h2 class="title">FAQ</h2>
+      <details><summary>Which industries use MonFlux?</summary><p>Logistics, retail, telecom, mobility, and public-sector operations teams that rely on accurate location decisions.</p></details>
+      <details><summary>Can MonFlux integrate with existing data warehouses?</summary><p>Yes. MonFlux outputs versioned datasets and APIs that plug into BI tools, warehouses, and application backends.</p></details>
+      <details><summary>Do you support enterprise security reviews?</summary><p>Yes. MonFlux supports audit trails, role-based access, and deployment documentation for enterprise procurement workflows.</p></details>
+    </section>
+
+    <section class="cta">
       <div>
         <h3 style="margin:0 0 8px;font-size:28px;letter-spacing:-0.7px;color:var(--text-strong)">Make MonFlux your location data source of truth.</h3>
         <p style="margin:0;color:var(--muted)">Launch a production-ready pilot in days, not quarters.</p>
@@ -130,7 +206,9 @@
       <button class="btn primary">Talk to Sales</button>
     </section>
 
-    <footer>© MonFlux · Location Intelligence Platform · Built with design-system-guide and deployed on Vercel</footer>
+    <footer>
+      © MonFlux · Location Intelligence Platform · Contact: team@monflux.example · Built with design-system-guide and deployed on Vercel
+    </footer>
   </div>
 </body>
 </html>

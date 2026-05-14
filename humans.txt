@@ -1,0 +1,7 @@
+/* TEAM */
+Brand: MonFlux
+Site: https://location-data-site.vercel.app/
+Repository: https://github.com/hermespromox/location-data-site
+
+/* THANKS */
+Built with Hermes + Vercel
